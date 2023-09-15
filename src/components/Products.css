@@ -3,3 +3,79 @@
     height: 5rem;
     border-width: 0.3rem;
 }
+
+
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 80px;
+    padding: 20px;
+    
+   
+  }
+  
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute the available space evenly between the children */
+    align-items: center; /* Center items horizontally since direction is column */
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 50px;
+  }
+  
+  .product-card img {
+     width: 100%; /* This will make sure the image width matches the grid column width */
+     height: 200px; /* Set a fixed height */
+     object-fit: fill; /* This will ensure that the image covers the area without distorting its aspect ratio */
+     margin-bottom: 15px;
+     border-radius: 0px; /* Optional: To give rounded corners to the images */
+
+    
+  }
+  
+  .product-card img:hover {
+    opacity: ; /* Ensure image remains fully opaque on hover */
+    transform: none; /* Ensure no transformations apply */
+  }
+  .product-card h2 {
+    margin: 0;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .product-card .category {
+    font-style: italic;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .product-card .price {
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .product-card {
+   
+    opacity: 0; 
+    animation: fadeIn 0.5s forwards;
+  }
+  

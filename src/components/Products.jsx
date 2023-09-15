@@ -30,7 +30,21 @@ function Products() {
           </div>
         </div>
       ) : (
-        data.map((product) => <h1 key={product.id}>{product.title}</h1>)
+        <div className="products-grid">
+          {data.map((product, index) => (
+            <div
+              key={product.id}
+              className="product-card"
+              style={{ animationDelay: `${index * 0.05}s` }}
+            >
+              <img src={product.image} alt={product.title} />
+              <h2>{product.title}</h2>
+              {/* <p>{product.description}</p> */}
+              {/* <p className="category">{product.category}</p> */}
+              <p className="price">${product.price}</p>
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );
