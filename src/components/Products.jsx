@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Products.css";
+import DescriptionButton from "./DescriptionButton";
 
 function Products() {
   const [data, setData] = useState([]);
@@ -43,6 +44,14 @@ function Products() {
               <h2>{product.title}</h2>
               {/* <p>{product.description}</p> */}
               <p className="price">${product.price}</p>
+              <div>
+                {" "}
+                <DescriptionButton
+                  data={data}
+                  product1={product.title}
+                  product2={product.description}
+                />{" "}
+              </div>
             </div>
           ))}
         </div>

@@ -42,7 +42,7 @@
   }
   
   .product-card img:hover {
-    opacity: ; /* Ensure image remains fully opaque on hover */
+    opacity: 0.5 ;
     transform: none; /* Ensure no transformations apply */
   }
   .product-card h2 {
@@ -79,3 +79,67 @@
     animation: fadeIn 0.5s forwards;
   }
   
+#modalbutton {
+  padding: 10px 20px;
+  border: none;
+  background-color: #3498db;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+  
+}
+
+#modalbutton:hover {
+
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+
+#modalheader {
+  background-color: #3498db; /* A shade of blue, you can adjust this as per your branding */
+    color: white; /* Text color */
+    padding: 15px 20px; /* Adjust spacing around the title */
+    border-bottom: 2px solid #f0f0f0; /* Adds a subtle border beneath the header */
+
+}
+#modaltitle {
+
+  font-family: 'Roboto', sans-serif;
+  font-size:18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-weight: 700;
+  font-style: italic;
+  margin: 0; /* Removes any default margins */
+  
+
+}
+
+
+#modalclose {
+
+  border: none;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3498db;
+
+}
+
+#modalclose:hover {
+
+  background-color: #2980b9;
+  
+}
+
+
+#modalbody {
+
+font-weight: 500;
+font-family: 'Roboto'
+}
