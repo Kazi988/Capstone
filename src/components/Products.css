@@ -44,6 +44,7 @@
   .product-card img:hover {
     opacity: 0.5 ;
     transform: none; /* Ensure no transformations apply */
+    cursor: pointer;
   }
   .product-card h2 {
     margin: 0;
