@@ -143,3 +143,22 @@
 font-weight: 500;
 font-family: 'Roboto'
 }
+
+#productsearchbox {
+
+  display: flex;
+  justify-content: center;
+}
+
+#productinputsearch {
+
+  border: solid;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#productlabelsearch {
+  font-family: 'Roboto';
+  
+}
