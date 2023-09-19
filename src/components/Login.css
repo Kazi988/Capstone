@@ -1,0 +1,59 @@
+#loginform {
+    width: 100%;
+    max-width: 400px; /* Setting a maximum width */
+    margin: 50px auto; /* Centering the form on the page with some space on the top */
+    padding: 50px;
+    border: 1px solid #e1e1e1; /* A subtle border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* A gentle shadow to lift the form */
+    background-color: #ffffff; /* Assuming the background of your app might not be white */
+  }
+  
+  /* Adding some space between form groups for better readability */
+  .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-family: 'Roboto';
+  }
+  
+  /* Styling the button with a hover effect for better UX */
+  .btn-primary {
+    width: 100%; /* Making the button take the full width of the form */
+    background-color: #007BFF;
+    border: none;
+    padding: 10px;
+    border-radius: px;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3; 
+  }
+  
+  /* This is optional: style the input fields when they're focused */
+  .form-control:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  /* Styling the checkbox label for better alignment */
+  .form-check-label {
+    vertical-align: middle;
+    margin-left: 60px;
+    margin-bottom: 40px;
+  }
+
+  #labelusername {
+
+    margin-bottom: 20px;
+  }
+
+  #labelpassword {
+    margin-bottom: 20px;
+  }
+  
+
+  
