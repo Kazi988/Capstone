@@ -13,7 +13,7 @@ function Products() {
       try {
         const response = await fetch("https://fakestoreapi.com/products");
         const result = await response.json();
-
+        console.log(result);
         setData(result);
       } catch (error) {
         console.error(error);
