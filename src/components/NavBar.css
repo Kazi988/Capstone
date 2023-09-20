@@ -14,7 +14,7 @@
     margin-right: 15px;
 }
 
-img {
+#navbarimage {
 
     border-radius: 50px;
     border-style: solid;
@@ -22,7 +22,7 @@ img {
     
 }
 
-img:hover {
+#navbar:hover {
 
     opacity: 0.5;
     filter: brightness(0.8) sepia(1000) hue-rotate(5000deg);

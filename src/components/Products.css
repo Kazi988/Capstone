@@ -41,14 +41,14 @@
     
   }
   
-  .product-card img:hover {
-    opacity: 0.5 ;
-    transform: none; /* Ensure no transformations apply */
+  img:hover {
+    opacity: 0.9 ;
     cursor: pointer;
+    transform: scale(1.05);
   }
   .product-card h2 {
     margin: 0;
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 20px;
   }
   
