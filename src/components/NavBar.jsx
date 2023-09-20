@@ -5,7 +5,13 @@ function NavBar() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          <img height="150px" width="150px" src="public/download.jpg" alt="" />
+          <img
+            id="navbarimage"
+            height="150px"
+            width="150px"
+            src="public/download.jpg"
+            alt=""
+          />
         </Link>
         <button
           className="navbar-toggler"
