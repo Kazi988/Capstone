@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import About from "./components/About";
 import Products from "./components/Products";
 import { Routes, Route } from "react-router-dom";
+import SingleProduct from "./components/SingleProduct";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
           <Route path="/login" element={<LogIn />} />
+          <Route path="/products/:productId" element={<SingleProduct />} />
         </Routes>
 
         <Footer />

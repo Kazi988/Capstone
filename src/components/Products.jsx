@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Products.css";
 import DescriptionButton from "./DescriptionButton";
+import { useNavigate } from "react-router-dom";
 
 function Products() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchParam, setSearchParam] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchAll() {
@@ -59,7 +61,11 @@ function Products() {
               >
                 <p className="category">{product.category}</p>
 
-                <img src={product.image} alt={product.title} />
+                <img
+                  onClick={() => navigate(`/products/${product.id}`)}
+                  src={product.image}
+                  alt={product.title}
+                />
                 <h2>{product.title}</h2>
                 {/* <p>{product.description}</p> */}
                 <p className="price">${product.price}</p>
