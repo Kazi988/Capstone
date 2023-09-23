@@ -4,7 +4,7 @@ import "./Products.css";
 import DescriptionButton from "./DescriptionButton";
 import { useNavigate } from "react-router-dom";
 
-function Products() {
+function Products({ setCart, cart }) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchParam, setSearchParam] = useState("");
@@ -30,6 +30,11 @@ function Products() {
         product.title.toLowerCase().includes(searchParam)
       )
     : data;
+
+  function addToCart(product) {
+    const cartItem = { ...product, quantity: 1 };
+    setCart([...cart, cartItem]);
+  }
 
   return (
     <>
@@ -69,8 +74,10 @@ function Products() {
                 <h2>{product.title}</h2>
                 {/* <p>{product.description}</p> */}
                 <p className="price">${product.price}</p>
-                <div>
-                  {" "}
+                <div id="cartanddescriptioncontainer">
+                  <button onClick={() => addToCart(product)} id="cartbutton">
+                    Add to Cart
+                  </button>{" "}
                   <DescriptionButton
                     data={data}
                     product1={product.title}
