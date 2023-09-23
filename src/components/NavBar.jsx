@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import "./NavBar.css"; // For custom styles
-function NavBar() {
+function NavBar({ cart }) {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
@@ -49,7 +49,7 @@ function NavBar() {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/cart">
-                <ShoppingCartOutlinedIcon fontSize="large" />
+                <ShoppingCartOutlinedIcon fontSize="large" /> {cart.length}
               </Link>
             </li>
           </ul>

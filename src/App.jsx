@@ -14,10 +14,13 @@ import { useState } from "react";
 function App() {
   const [token, setToken] = useState(null);
   const [user, setUser] = useState("");
+  const [cart, setCart] = useState([]);
+
+  console.log(cart);
   return (
     <>
       <div>
-        <NavBar />
+        <NavBar cart={cart} />
 
         <Routes>
           <Route
@@ -37,7 +40,14 @@ function App() {
           />
           <Route
             path="/products"
-            element={<Products token={token} setToken={setToken} />}
+            element={
+              <Products
+                cart={cart}
+                setCart={setCart}
+                token={token}
+                setToken={setToken}
+              />
+            }
           />
           <Route
             path="/login"

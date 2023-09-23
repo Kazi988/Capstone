@@ -4,7 +4,7 @@
     margin: 50px auto;
     padding: 0 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center; /* Center items horizontally */
@@ -12,14 +12,14 @@
 
 /* Card */
 .card {
-    width: 100%;
+    width: 40%;
     border: none;
     overflow: hidden;
 }
 
 .card-img-top {
-    width: 50%; /* Image reduced to 50% width of the card */
-    height: auto; /* Let the image decide the height */
+    width: 100%; /* Image reduced to 50% width of the card */
+    height: auto; 
     object-fit: cover;
     margin: 0 auto; /* Center the image horizontally */
     display: block;
