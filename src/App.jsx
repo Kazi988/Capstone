@@ -8,18 +8,52 @@ import About from "./components/About";
 import Products from "./components/Products";
 import { Routes, Route } from "react-router-dom";
 import SingleProduct from "./components/SingleProduct";
+import Home from "./components/Home";
+import { useState } from "react";
 
 function App() {
+  const [token, setToken] = useState(null);
+  const [user, setUser] = useState("");
   return (
     <>
       <div>
         <NavBar />
 
         <Routes>
-          <Route path="/about" element={<About />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/login" element={<LogIn />} />
-          <Route path="/products/:productId" element={<SingleProduct />} />
+          <Route
+            path="/about"
+            element={<About token={token} setToken={setToken} />}
+          />
+          <Route
+            path="/"
+            element={
+              <Home
+                token={token}
+                setToken={setToken}
+                user={user}
+                setUser={setUser}
+              />
+            }
+          />
+          <Route
+            path="/products"
+            element={<Products token={token} setToken={setToken} />}
+          />
+          <Route
+            path="/login"
+            element={
+              <LogIn
+                token={token}
+                setToken={setToken}
+                user={user}
+                setUser={setUser}
+              />
+            }
+          />
+          <Route
+            path="/products/:productId"
+            element={<SingleProduct token={token} setToken={setToken} />}
+          />
         </Routes>
 
         <Footer />

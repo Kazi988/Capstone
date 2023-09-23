@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import "./NavBar.css"; // For custom styles
 function NavBar() {
   return (
@@ -48,7 +49,7 @@ function NavBar() {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/cart">
-                Cart
+                <ShoppingCartOutlinedIcon fontSize="large" />
               </Link>
             </li>
           </ul>

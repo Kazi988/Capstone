@@ -1,10 +1,13 @@
 import { useState } from "react";
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
 
-function LogIn() {
+function LogIn({ setToken, setUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [checkbox, setCheckbox] = useState(false);
+
+  const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -17,12 +20,16 @@ function LogIn() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          username: "mor_2314",
-          password: "83r5^_",
+          username: username,
+          password: password,
         }),
       });
       console.log(result);
       const response = await result.json();
+      setToken(response.token);
+      setUser(username);
+      // console.log(token);
+      localStorage.setItem("token", response.token);
       console.log(response);
     } catch (error) {
       console.error(error);
@@ -85,7 +92,13 @@ function LogIn() {
             />{" "}
           </label>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button
+          // onClick={() => {
+          //   navigate("/");
+          // }}
+          type="submit"
+          className="btn btn-primary"
+        >
           Submit
         </button>
       </form>
