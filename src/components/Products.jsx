@@ -8,6 +8,8 @@ function Products({ setCart, cart }) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchParam, setSearchParam] = useState("");
+  const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -15,7 +17,9 @@ function Products({ setCart, cart }) {
       try {
         const response = await fetch("https://fakestoreapi.com/products");
         const result = await response.json();
-        console.log(result);
+        const categories = result.map((product) => product.category);
+        const uniqueCategories = [...new Set(categories)];
+        setCategories(uniqueCategories);
         setData(result);
       } catch (error) {
         console.error(error);
@@ -25,15 +29,27 @@ function Products({ setCart, cart }) {
     }
     fetchAll();
   }, []);
-  const productsToDisplay = searchParam
-    ? data.filter((product) =>
-        product.title.toLowerCase().includes(searchParam)
-      )
-    : data;
 
   function addToCart(product) {
     const cartItem = { ...product, quantity: 1 };
     setCart([...cart, cartItem]);
+  }
+
+  function selectCategory(e) {
+    setSelectedCategory(e.target.value);
+  }
+
+  let filteredProducts = data;
+
+  if (selectedCategory !== "all") {
+    filteredProducts = data.filter(
+      (product) => product.category === selectedCategory
+    );
+  }
+  if (searchParam) {
+    filteredProducts = filteredProducts.filter((product) =>
+      product.title.toLowerCase().includes(searchParam)
+    );
   }
 
   return (
@@ -48,6 +64,14 @@ function Products({ setCart, cart }) {
             onChange={(e) => setSearchParam(e.target.value.toLowerCase())}
           />
         </label>
+        <select onChange={selectCategory}>
+          <option value="all">All Products</option>
+          {categories.map((category) => (
+            <option value={category} key={category}>
+              {category}
+            </option>
+          ))}
+        </select>
       </div>
       <div className="spinnah">
         {loading ? (
@@ -58,21 +82,19 @@ function Products({ setCart, cart }) {
           </div>
         ) : (
           <div className="products-grid">
-            {productsToDisplay.map((product, index) => (
+            {filteredProducts.map((product, index) => (
               <div
                 key={product.id}
                 className="product-card"
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
                 <p className="category">{product.category}</p>
-
                 <img
                   onClick={() => navigate(`/products/${product.id}`)}
                   src={product.image}
                   alt={product.title}
                 />
                 <h2>{product.title}</h2>
-                {/* <p>{product.description}</p> */}
                 <p className="price">${product.price}</p>
                 <div id="cartanddescriptioncontainer">
                   <button onClick={() => addToCart(product)} id="cartbutton">
