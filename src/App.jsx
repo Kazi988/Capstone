@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <div>
-        <NavBar cart={cart} />
+        <NavBar cart={cart} setCart={setCart} />
 
         <Routes>
           <Route
