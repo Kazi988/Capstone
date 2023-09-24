@@ -1,61 +1,104 @@
 import { Link } from "react-router-dom";
+import { Modal } from "react-bootstrap";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import "./NavBar.css"; // For custom styles
+import { useState } from "react";
+import "./NavBar.css";
+import "./NavBarModal.css";
 function NavBar({ cart }) {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
-          <img
-            id="navbarimage"
-            height="150px"
-            width="150px"
-            src="public/download.jpg"
-            alt=""
-          />
-        </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item active">
-              <Link className="nav-link" to="/">
-                Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/login">
-                Log In
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/products">
-                Products
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/about">
-                About
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/cart">
-                <ShoppingCartOutlinedIcon fontSize="large" /> {cart.length}
-              </Link>
-            </li>
-          </ul>
+    <>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div className="container-fluid">
+          <Link className="navbar-brand" to="/">
+            <img
+              id="navbarimage"
+              height="150px"
+              width="150px"
+              src="public/download.jpg"
+              alt=""
+            />
+          </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item active">
+                <Link className="nav-link" to="/">
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/login">
+                  Log In
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/products">
+                  Products
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/about">
+                  About
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link">
+                  <ShoppingCartOutlinedIcon
+                    onClick={handleShow}
+                    fontSize="large"
+                  />{" "}
+                  {cart.length}
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Shopping Cart</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <ul>
+            {cart.map((item) => (
+              <li key={item.id} className="modal-item">
+                <img src={item.image} alt={item.title} />
+                <div className="modal-item-details">
+                  <span>{item.title}</span>
+                  <span className="modal-price">${item.price}</span>
+                </div>
+                <button onClick={() => handleRemoveFromCart(item.id)}>
+                  Remove Item
+                </button>
+              </li>
+            ))}
+          </ul>
+        </Modal.Body>
+        <Modal.Footer>
+          <div id="cartcontainerfooter">
+            <button id="cartmodalcheckout">Checkout</button>
+            <button id="cartmodalclose" onClick={handleClose}>
+              Close
+            </button>
+          </div>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
 }
 
