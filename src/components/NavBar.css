@@ -38,3 +38,12 @@
     font-weight: 500;
 }
 
+#totalpricecart {
+
+    border: none;
+    border-color: black;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+}

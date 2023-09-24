@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./SingleProduct.css";
 
-export default function SingleProduct() {
+export default function SingleProduct({ setCart, cart }) {
   const [single, setSingle] = useState("");
   const { productId } = useParams();
 
@@ -22,6 +22,11 @@ export default function SingleProduct() {
     fetchSingleProduct();
   }, [productId]);
 
+  function addToCart(single) {
+    const cartItem = { ...single, quantity: 1 };
+    setCart([...cart, cartItem]);
+  }
+
   return (
     <div className="container mt-5">
       <div className="card">
@@ -35,7 +40,9 @@ export default function SingleProduct() {
               Rating: {single.rating.rate} (from {single.rating.count} reviews)
             </p>
           )}
-          <button className="btn btn-primary">Add to Cart</button>
+          <button onClick={() => addToCart(single)} className="btn btn-primary">
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>

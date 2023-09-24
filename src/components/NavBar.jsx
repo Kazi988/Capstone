@@ -9,6 +9,8 @@ function NavBar({ cart }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const totalPrice = cart.reduce((acc, item) => acc + item.price, 0);
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -82,12 +84,16 @@ function NavBar({ cart }) {
                   <span>{item.title}</span>
                   <span className="modal-price">${item.price}</span>
                 </div>
-                <button onClick={() => handleRemoveFromCart(item.id)}>
-                  Remove Item
-                </button>
+
+                <button id="removeitembutton">Remove Item</button>
               </li>
             ))}
           </ul>
+          {totalPrice !== 0 && (
+            <div>
+              <h3 id="totalpricecart">Your Total Is: ${totalPrice}</h3>
+            </div>
+          )}
         </Modal.Body>
         <Modal.Footer>
           <div id="cartcontainerfooter">
