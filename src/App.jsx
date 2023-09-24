@@ -62,7 +62,14 @@ function App() {
           />
           <Route
             path="/products/:productId"
-            element={<SingleProduct token={token} setToken={setToken} />}
+            element={
+              <SingleProduct
+                cart={cart}
+                setCart={setCart}
+                token={token}
+                setToken={setToken}
+              />
+            }
           />
         </Routes>
 

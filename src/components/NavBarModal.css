@@ -3,12 +3,14 @@
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  justify-content: center;
 }
 
 .modal-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin: 1rem;
   background-color: #f9f9f9; /* Light Background */
   padding: 1rem;
@@ -17,15 +19,18 @@
 
 .modal-item img {
   max-width: 100px;
+  display: flex;
   max-height: 100px;
   object-fit: cover;
   margin-bottom: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 #cartcontainerfooter {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-direction: row;
   
 }
@@ -50,4 +55,19 @@
   font-family: 'Roboto';
   
   
+}
+
+#removeitembutton{
+  background-color: rgb(134, 165, 167);
+  color: white;
+  font-size: 15px;
+  border: solid;
+  border-radius: 10px;
+  padding: 5px;
+  font-family: 'Roboto';
+  margin-top: 5px;
+  font-weight: 700;
+
+  
+
 }
