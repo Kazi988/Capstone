@@ -4,12 +4,16 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { useState } from "react";
 import "./NavBar.css";
 import "./NavBarModal.css";
-function NavBar({ cart }) {
+function NavBar({ cart, setCart }) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const totalPrice = cart.reduce((acc, item) => acc + item.price, 0);
+
+  function deleteItem(id) {
+    setCart(cart.filter((item) => item.id !== id));
+  }
 
   return (
     <>
@@ -84,8 +88,12 @@ function NavBar({ cart }) {
                   <span>{item.title}</span>
                   <span className="modal-price">${item.price}</span>
                 </div>
-
-                <button id="removeitembutton">Remove Item</button>
+                <button
+                  onClick={() => deleteItem(item.id)}
+                  id="removeitembutton"
+                >
+                  Remove Item
+                </button>
               </li>
             ))}
           </ul>
