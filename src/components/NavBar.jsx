@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Modal } from "react-bootstrap";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { useState } from "react";
-import productPriceMapping from "./idmap";
+import { useNavigate } from "react-router-dom";
 
 import { loadStripe } from "@stripe/stripe-js";
 import "./NavBar.css";
@@ -12,10 +12,12 @@ import idmap from "./idmap";
 const stripePromise = loadStripe(
   "pk_test_51Nti1AFz6BJIRQtNXATLet5VqoThfJYxsnxnPJQQ5yDoLUmB9nvKzwTUU8JGUZzlDuRBh95jsR1KWWdvt5w5SU1x00j7wFvTSI"
 );
-function NavBar({ cart, setCart }) {
+function NavBar({ cart, setCart, token, setToken }) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const isloggedin = localStorage.getItem("token");
+  const navigatte = useNavigate();
 
   const totalPrice = cart.reduce((acc, item) => acc + item.price, 0);
 
@@ -31,7 +33,7 @@ function NavBar({ cart, setCart }) {
       const lineItems = cart.map((item) => {
         const stripePriceId = idmap[item.id];
         if (!stripePriceId)
-          throw new Error(`Stripe Price ID not found for item ID: ${item.id}`);
+          throw new Error(`Item not found for item ID: ${item.id}`);
         return {
           price: stripePriceId,
           quantity: item.quantity || 1,
@@ -83,9 +85,20 @@ function NavBar({ cart, setCart }) {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/login">
-                  Log In
-                </Link>
+                {isloggedin ? (
+                  <Link
+                    onClick={() => {
+                      localStorage.clear();
+                      navigatte("/");
+                    }}
+                  >
+                    Log out
+                  </Link>
+                ) : (
+                  <Link className="nav-link" to="/login">
+                    Log In
+                  </Link>
+                )}
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/products">

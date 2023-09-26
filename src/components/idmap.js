@@ -1,10 +1,10 @@
 // productsStripeMapping.js
-const productPriceMapping = {
+const idmap = {
     1: "price_1Nu5KQFz6BJIRQtN22tKxGoK",
     2: "price_1Nu5NxFz6BJIRQtNSfQeyNOF",
     3: "price_1Nu5OzFz6BJIRQtNlmipGtDh",
     4: "price_1NuLrEFz6BJIRQtNGWInwFj2",
-    5: "price_1NuLsHFz6BJIRQtNaQDoKxRS1",
+    5: "price_1NuLsHFz6BJIRQtNaQDoKxRS",
     6: "price_1NuLt8Fz6BJIRQtNnCvvLgq1",
     7: "price_1NuLu9Fz6BJIRQtNPW06yMqa",
     8: "price_1NuLvAFz6BJIRQtNXEAIFEUQ",
@@ -22,4 +22,4 @@ const productPriceMapping = {
     20: "price_1NuMEkFz6BJIRQtNWzZieoZ4",
 };
 
-export default productPriceMapping;
+export default idmap;

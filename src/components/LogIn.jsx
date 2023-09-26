@@ -93,7 +93,8 @@ function LogIn({ setToken, setUser }) {
           </label>
         </div>
         <button
-          // onClick={() => {
+          // onClick={(e) => {
+          //   e.preventDefault;
           //   navigate("/");
           // }}
           type="submit"

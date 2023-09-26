@@ -23,7 +23,12 @@ function App() {
   return (
     <>
       <div>
-        <NavBar cart={cart} setCart={setCart} />
+        <NavBar
+          cart={cart}
+          setCart={setCart}
+          token={token}
+          setToken={setToken}
+        />
 
         <Routes>
           <Route
