@@ -1,4 +1,4 @@
-/* Container */
+
 .container {
     max-width: 800px;
     margin: 50px auto;
@@ -7,10 +7,10 @@
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center items horizontally */
+    align-items: center; 
 }
 
-/* Card */
+
 .card {
     width: 40%;
     border: none;
@@ -18,10 +18,10 @@
 }
 
 .card-img-top {
-    width: 100%; /* Image reduced to 50% width of the card */
+    width: 100%; 
     height: auto; 
     object-fit: cover;
-    margin: 0 auto; /* Center the image horizontally */
+    margin: 0 auto; 
     display: block;
 }
 
@@ -45,13 +45,13 @@
     color: #777;
 }
 
-/* Price and Rating */
+
 p {
     font-size: 18px;
     margin: 0;
 }
 
-/* Add to Cart Button */
+
 .btn {
     cursor: pointer;
     background-color: #007bff;

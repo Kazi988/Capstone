@@ -1,6 +1,9 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LogIn from "./components/LogIn";
+import CheckOut from "./components/CheckOut";
+import Success from "./Success";
+import Cancel from "./Cancel";
 
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
@@ -70,6 +73,18 @@ function App() {
                 setToken={setToken}
               />
             }
+          />
+          <Route
+            path="/checkout"
+            element={<CheckOut token={token} setToken={setToken} />}
+          />
+          <Route
+            path="/cancel"
+            element={<Cancel token={token} setToken={setToken} />}
+          />
+          <Route
+            path="/success"
+            element={<Success token={token} setToken={setToken} />}
           />
         </Routes>
 

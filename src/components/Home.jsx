@@ -30,7 +30,7 @@ function Home({ token, user, setUser }) {
 
   return (
     <>
-      <div>Welcome{user && user.username}</div>;
+      <div>Welcome{user && user.username}</div>
       <div className="homepage-container">
         <img className="gif" src="public/video.gif" alt="Description of GIF" />
       </div>
