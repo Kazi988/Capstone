@@ -2,8 +2,16 @@ import { Link } from "react-router-dom";
 import { Modal } from "react-bootstrap";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { useState } from "react";
+import productPriceMapping from "./idmap";
+
+import { loadStripe } from "@stripe/stripe-js";
 import "./NavBar.css";
 import "./NavBarModal.css";
+import idmap from "./idmap";
+
+const stripePromise = loadStripe(
+  "pk_test_51Nti1AFz6BJIRQtNXATLet5VqoThfJYxsnxnPJQQ5yDoLUmB9nvKzwTUU8JGUZzlDuRBh95jsR1KWWdvt5w5SU1x00j7wFvTSI"
+);
 function NavBar({ cart, setCart }) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -14,6 +22,34 @@ function NavBar({ cart, setCart }) {
   function deleteItem(id) {
     setCart(cart.filter((item) => item.id !== id));
   }
+
+  const handleCheckout = async () => {
+    try {
+      const stripe = await stripePromise;
+      if (!stripe) throw new Error("Stripe is not loaded");
+
+      const lineItems = cart.map((item) => {
+        const stripePriceId = idmap[item.id];
+        if (!stripePriceId)
+          throw new Error(`Stripe Price ID not found for item ID: ${item.id}`);
+        return {
+          price: stripePriceId,
+          quantity: item.quantity || 1,
+        };
+      });
+
+      const { error } = await stripe.redirectToCheckout({
+        lineItems,
+        mode: "payment",
+        successUrl: `${window.location.origin}/success`,
+        cancelUrl: `${window.location.origin}/cancel`,
+      });
+
+      if (error) throw error;
+    } catch (err) {
+      console.error("Error during checkout: ", err);
+    }
+  };
 
   return (
     <>
@@ -104,12 +140,12 @@ function NavBar({ cart, setCart }) {
           )}
         </Modal.Body>
         <Modal.Footer>
-          <div id="cartcontainerfooter">
-            <button id="cartmodalcheckout">Checkout</button>
-            <button id="cartmodalclose" onClick={handleClose}>
-              Close
-            </button>
-          </div>
+          <button id="cartmodalcheckout" onClick={handleCheckout}>
+            Checkout
+          </button>
+          <button id="cartmodalclose" onClick={handleClose}>
+            Close
+          </button>
         </Modal.Footer>
       </Modal>
     </>

@@ -18,8 +18,8 @@
   .product-card {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribute the available space evenly between the children */
-    align-items: center; /* Center items horizontally since direction is column */
+    justify-content: space-between;
+    align-items: center; 
     border: 1px solid #ccc;
     border-radius: 25px;
     padding: 20px;
@@ -32,11 +32,11 @@
   }
   
   .product-card img {
-     width: 100%; /* This will make sure the image width matches the grid column width */
-     height: 200px; /* Set a fixed height */
-     object-fit: fill; /* This will ensure that the image covers the area without distorting its aspect ratio */
+     width: 100%; 
+     height: 200px; 
+     object-fit: fill; 
      margin-bottom: 15px;
-     border-radius: 0px; /* Optional: To give rounded corners to the images */
+     border-radius: 0px; 
 
     
   }
@@ -81,9 +81,9 @@
   }
 #cartanddescriptioncontainer {
   
-    display: flex; /* Enable Flexbox */
-    align-items: center; /* Align items vertically in the center */
-    gap: 10px; /* Optional: Add some gap between the buttons */
+    display: flex; 
+    align-items: center; 
+    gap: 10px;
   
 }  
 #cartbutton {
@@ -124,10 +124,10 @@
 
 
 #modalheader {
-  background-color: #3498db; /* A shade of blue, you can adjust this as per your branding */
-    color: white; /* Text color */
-    padding: 15px 20px; /* Adjust spacing around the title */
-    border-bottom: 2px solid #f0f0f0; /* Adds a subtle border beneath the header */
+  background-color: #3498db;
+    color: white; 
+    padding: 15px 20px; 
+    border-bottom: 2px solid #f0f0f0; 
 
 }
 #modaltitle {
@@ -140,7 +140,7 @@
   height: 100%;
   font-weight: 700;
   font-style: italic;
-  margin: 0; /* Removes any default margins */
+  margin: 0; 
   
 
 }
