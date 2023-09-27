@@ -93,14 +93,7 @@ function LogIn({ setToken, setUser }) {
             />{" "}
           </label>
         </div>
-        <button
-          // onClick={(e) => {
-          //   e.preventDefault;
-          //   navigate("/");
-          // }}
-          type="submit"
-          className="btn btn-primary"
-        >
+        <button id="loginbutton" type="submit" className="btn btn-primary">
           Submit
         </button>
       </form>

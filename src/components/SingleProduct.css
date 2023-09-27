@@ -23,13 +23,14 @@
     object-fit: cover;
     margin: 0 auto; 
     display: block;
+    cursor:pointer;
 }
 
 .card-body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 5px;
     width: 100%;
 }
 
@@ -64,4 +65,30 @@ p {
 
 .btn:hover {
     background-color: #0056b3;
+}
+
+#singleproductbtn {
+
+    background-color: #16e071;
+}
+
+#singleproductbtn:hover{
+    background-color: #1a4f19;
+    transform: scale(1.05);
+
+}
+
+#gobackbutton {
+
+    border: none;
+    color: white;
+    background-color: #565f68;
+    font-size: 25px;
+    margin-top: 30px;
+    margin-left: 30px;
+    border-radius: 5px;
+    padding:8px;
+    font-weight: 700;
+    font-family: 'Roboto';
+    
 }

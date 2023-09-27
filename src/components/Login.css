@@ -1,3 +1,4 @@
+
 #loginform {
     width: 100%;
     max-width: 400px;
@@ -56,4 +57,39 @@
   }
   
 
+  #inputpassword:focus::placeholder {
+    opacity: 0;
+  }
+  #inputusername:focus::placeholder {
+    opacity: 0;
+  }
+
+  #loginbutton {
+    background-color: #3498db;
+    transition: background-color 0.3s ease;
+    color: rgb(255, 255, 255);
+    font-family: 'Roboto';
+  }
+
   
+#loginbutton:hover {
+
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+#signin {
+
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-family: "Roboto";
+  font-weight: 700;
+}
+
+
+#loginform {
+
+  margin-bottom: 565px;
+
+}

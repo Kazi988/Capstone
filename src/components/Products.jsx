@@ -57,7 +57,7 @@ function Products({ setCart, cart, token }) {
     <>
       <div id="productsearchbox">
         <label id="productlabelsearch">
-          Search:{" "}
+          Find Product:{" "}
           <input
             id="productinputsearch"
             type="text"
