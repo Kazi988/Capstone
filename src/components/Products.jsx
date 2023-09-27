@@ -4,13 +4,14 @@ import "./Products.css";
 import DescriptionButton from "./DescriptionButton";
 import { useNavigate } from "react-router-dom";
 
-function Products({ setCart, cart }) {
+function Products({ setCart, cart, token }) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchParam, setSearchParam] = useState("");
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const navigate = useNavigate();
+  const hidecartbutton = localStorage.getItem("token");
 
   useEffect(() => {
     async function fetchAll() {

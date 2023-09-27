@@ -16,10 +16,14 @@ function NavBar({ cart, setCart, token, setToken }) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [quantity, setQuantity] = useState({});
   const isloggedin = localStorage.getItem("token");
   const navigatte = useNavigate();
 
-  const totalPrice = cart.reduce((acc, item) => acc + item.price, 0);
+  const totalPrice = cart.reduce(
+    (acc, item) => acc + item.price * (quantity[item.id] || 1),
+    0
+  );
 
   function deleteItem(id) {
     setCart(cart.filter((item) => item.id !== id));
@@ -49,9 +53,20 @@ function NavBar({ cart, setCart, token, setToken }) {
 
       if (error) throw error;
     } catch (err) {
-      console.error("Error during checkout: ", err);
+      console.error("You have an error ", err);
     }
   };
+
+  function handleplusQuantity(item, plus) {
+    const newquantity = (quantity[item.id] || 0) + 1;
+
+    setQuantity((quantity) => ({ ...quantity, [item.id]: newquantity }));
+  }
+  function handleminusQuantity(item, minus) {
+    const newquantity = (quantity[item.id] || 0) - 1;
+
+    setQuantity((quantity) => ({ ...quantity, [item.id]: newquantity }));
+  }
 
   return (
     <>
@@ -142,6 +157,22 @@ function NavBar({ cart, setCart, token, setToken }) {
                   id="removeitembutton"
                 >
                   Remove Item
+                </button>
+                <button
+                  onClick={() => {
+                    handleplusQuantity(item, 1);
+                  }}
+                >
+                  +
+                </button>
+                <p>Quantity</p>
+                <p>{quantity[item.id] || 0}</p>
+                <button
+                  onClick={() => {
+                    handleminusQuantity(item, -1);
+                  }}
+                >
+                  -
                 </button>
               </li>
             ))}
