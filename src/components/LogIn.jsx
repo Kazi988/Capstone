@@ -42,6 +42,7 @@ function LogIn({ setToken, setUser }) {
   return (
     <>
       <form id="loginform" onSubmit={handleSubmit}>
+        <h2 id="signin">Sign In</h2>
         <div className="form-group">
           <label id="labelusername">
             {" "}

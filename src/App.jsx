@@ -1,7 +1,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LogIn from "./components/LogIn";
-import CheckOut from "./components/CheckOut";
+
 import Success from "./Success";
 import Cancel from "./Cancel";
 
@@ -79,10 +79,7 @@ function App() {
               />
             }
           />
-          <Route
-            path="/checkout"
-            element={<CheckOut token={token} setToken={setToken} />}
-          />
+
           <Route
             path="/cancel"
             element={<Cancel token={token} setToken={setToken} />}

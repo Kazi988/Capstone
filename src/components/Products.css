@@ -37,13 +37,14 @@
      object-fit: fill; 
      margin-bottom: 15px;
      border-radius: 0px; 
+     cursor: pointer;
 
     
   }
   
-  img:hover {
+  .product-card:hover {
     opacity: 0.9 ;
-    cursor: pointer;
+    
     transform: scale(1.05);
   }
   .product-card h2 {
@@ -175,14 +176,14 @@ font-family: 'Roboto'
   display: flex;
   justify-content: center;
 }
-
+/* 
 #productinputsearch {
 
-  border: solid;
+  border: none;
   border-radius: 5px;
   margin-bottom: 20px;
   margin-top: 20px;
-}
+} */
 
 #productlabelsearch {
   font-family: 'Roboto';

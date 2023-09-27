@@ -91,6 +91,7 @@ function Products({ setCart, cart, token }) {
               >
                 <p className="category">{product.category}</p>
                 <img
+                  className="cardimage"
                   onClick={() => navigate(`/products/${product.id}`)}
                   src={product.image}
                   alt={product.title}
