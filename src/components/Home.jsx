@@ -26,7 +26,7 @@ function Home({ token, user, setUser }) {
         setUser(retrieveuser[0]);
         localStorage.setItem(user);
       } catch (error) {
-        console.error("This is an error", error.message);
+        console.error("Error fetching all users", error.message);
       }
     }
 
