@@ -1,0 +1,33 @@
+#accordion1 {
+    background-color: pink;
+}
+
+#accordion2 {
+    background-color: pink;
+}
+
+.abody1 {
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto';
+    font-weight: 700;
+    
+    
+    
+}
+
+.aboutgif {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 295px;
+
+}
+
+
+.header1 {
+    font-family: 'Roboto';
+    
+  
+}
