@@ -23,7 +23,7 @@ function Products({ setCart, cart, token }) {
         setCategories(uniqueCategories);
         setData(result);
       } catch (error) {
-        console.error(error);
+        console.error("Error fetching all products", error);
       }
 
       setLoading(false);
