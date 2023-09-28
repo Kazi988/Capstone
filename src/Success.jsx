@@ -20,6 +20,7 @@ function Success() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          marginBottom: "300px",
         }}
       >
         <img src="public/happykermit.jpg" alt="happykermit" />
