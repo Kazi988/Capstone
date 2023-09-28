@@ -2,8 +2,8 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LogIn from "./components/LogIn";
 
-import Success from "./Success";
-import Cancel from "./Cancel";
+import Success from "./components/Success";
+import Cancel from "./components/Cancel";
 
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";

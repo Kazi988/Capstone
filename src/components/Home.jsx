@@ -39,7 +39,7 @@ function Home({ token, user, setUser }) {
         <MDBCarouselItem
           className="w-100 d-block"
           itemId={1}
-          src="public/test3 (1) (1).jpg"
+          src="src/components/images/test3 (1) (1).jpg"
           alt="page1"
         >
           {" "}
@@ -60,7 +60,7 @@ function Home({ token, user, setUser }) {
         <MDBCarouselItem
           className="w-100 d-block"
           itemId={2}
-          src="public/test4.jpg"
+          src="src/components/images/test4.jpg"
           alt="shelves"
         >
           {" "}
@@ -80,7 +80,7 @@ function Home({ token, user, setUser }) {
         <MDBCarouselItem
           className="w-100 d-block"
           itemId={3}
-          src="public/test5.jpg"
+          src="src/components/images/test5.jpg"
           alt="saleimage"
         >
           {" "}
@@ -97,7 +97,7 @@ function Home({ token, user, setUser }) {
         </MDBCarouselItem>
       </MDBCarousel>
       <div ref={scrolling} className="homepagevideo">
-        <video src="public/video.mp4" controls autoPlay muted />
+        <video src="src/components/images/video.mp4" controls autoPlay muted />
       </div>
     </>
   );

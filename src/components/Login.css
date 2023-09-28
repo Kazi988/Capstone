@@ -1,85 +1,75 @@
-
 #loginform {
-    width: 100%;
-    max-width: 400px;
-    margin: 50px auto; 
-    padding: 50px;
-    border: 1px solid #e1e1e1;
-    border-radius: 5px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-  }
-  
-  
-  .form-group {
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-family: 'Roboto';
-  }
-  
- 
-  .btn-primary {
-    width: 100%; 
-    background-color: #007BFF;
-    border: none;
-    padding: 10px;
-    border-radius: px;
-    transition: background-color 0.3s;
-  }
-  
-  .btn-primary:hover {
-    background-color: #0056b3; 
-  }
-  
-  
-  .form-control:focus {
-    border-color: #007BFF;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-  }
-  
- 
-  .form-check-label {
-    vertical-align: middle;
-    margin-left: 60px;
-    margin-bottom: 40px;
-  }
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 50px;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
 
-  #labelusername {
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-family: "Roboto";
+}
 
-    margin-bottom: 20px;
-  }
+.btn-primary {
+  width: 100%;
+  background-color: #007bff;
+  border: none;
+  padding: 10px;
+  border-radius: px;
+  transition: background-color 0.3s;
+}
 
-  #labelpassword {
-    margin-bottom: 20px;
-  }
-  
+.btn-primary:hover {
+  background-color: #0056b3;
+}
 
-  #inputpassword:focus::placeholder {
-    opacity: 0;
-  }
-  #inputusername:focus::placeholder {
-    opacity: 0;
-  }
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
 
-  #loginbutton {
-    background-color: #3498db;
-    transition: background-color 0.3s ease;
-    color: rgb(255, 255, 255);
-    font-family: 'Roboto';
-  }
+.form-check-label {
+  vertical-align: middle;
+  margin-left: 60px;
+  margin-bottom: 40px;
+}
 
-  
+#labelusername {
+  margin-bottom: 20px;
+}
+
+#labelpassword {
+  margin-bottom: 20px;
+}
+
+#inputpassword:focus::placeholder {
+  opacity: 0;
+}
+#inputusername:focus::placeholder {
+  opacity: 0;
+}
+
+#loginbutton {
+  background-color: #3498db;
+  transition: background-color 0.3s ease;
+  color: rgb(255, 255, 255);
+  font-family: "Roboto";
+}
+
 #loginbutton:hover {
-
   background-color: #2980b9;
   transform: scale(1.05);
 }
 
 #signin {
-
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
@@ -87,8 +77,6 @@
   font-weight: 700;
 }
 
-
 #loginform {
-
   margin-bottom: 565px;
 }

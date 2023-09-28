@@ -81,7 +81,7 @@ function NavBar({ cart, setCart, token, setToken }) {
               id="navbarimage"
               height="150px"
               width="150px"
-              src="public/download.jpg"
+              src="src/components/images/download.jpg"
               alt=""
             />
           </Link>
