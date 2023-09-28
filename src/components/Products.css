@@ -4,15 +4,11 @@
     border-width: 0.3rem;
 }
 
-
-
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 80px;
-    padding: 20px;
-    
-   
+    padding: 20px;       
   }
   
   .product-card {
@@ -37,16 +33,14 @@
      object-fit: fill; 
      margin-bottom: 15px;
      border-radius: 0px; 
-     cursor: pointer;
-
-    
+     cursor: pointer;    
   }
   
   .product-card:hover {
-    opacity: 0.9 ;
-    
+    opacity: 0.9 ;    
     transform: scale(1.05);
   }
+
   .product-card h2 {
     margin: 0;
     font-size: 18px;
@@ -75,18 +69,17 @@
     }
   }
   
-  .product-card {
-   
+  .product-card {   
     opacity: 0; 
     animation: fadeIn 0.5s forwards;
   }
-#cartanddescriptioncontainer {
-  
+
+#cartanddescriptioncontainer {  
     display: flex; 
     align-items: center; 
-    gap: 10px;
-  
+    gap: 10px;  
 }  
+
 #cartbutton {
   padding: 10px 10px;
   border: none;
@@ -112,9 +105,7 @@
   background-color: #3498db;
   color: #fff;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  
-  
+  transition: background-color 0.3s ease;   
 }
 
 #modalbutton:hover {
@@ -129,7 +120,6 @@
     color: white; 
     padding: 15px 20px; 
     border-bottom: 2px solid #f0f0f0; 
-
 }
 #modaltitle {
 
@@ -141,9 +131,7 @@
   height: 100%;
   font-weight: 700;
   font-style: italic;
-  margin: 0; 
-  
-
+  margin: 0;  
 }
 
 
@@ -155,13 +143,11 @@
   justify-content: center;
   align-items: center;
   background-color: #3498db;
-
 }
 
 #modalclose:hover {
 
-  background-color: #2980b9;
-  
+  background-color: #2980b9;  
 }
 
 
@@ -181,9 +167,7 @@ font-family: 'Roboto'
 
   border: solid;
   border-radius: 5px;
-  border-color: #d1dcd1;
- 
-
+  border-color: #d1dcd1; 
 }
 
 #productinputsearch:focus::placeholder {
@@ -192,8 +176,7 @@ font-family: 'Roboto'
 
 #productlabelsearch {
   font-family: 'Roboto';
-  font-weight: 500;
-  
+  font-weight: 500;  
 }
 
 

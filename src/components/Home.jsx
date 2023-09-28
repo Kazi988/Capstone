@@ -21,20 +21,17 @@ function Home({ token, user, setUser }) {
           },
         });
         const result = await response.json();
-        console.log(result);
 
         const retrieveuser = result.filter((user1) => user1.username === user);
         setUser(retrieveuser[0]);
         localStorage.setItem(user);
-        console.log(retrieveuser);
       } catch (error) {
-        console.error(error.message);
+        console.error("This is an error", error.message);
       }
     }
 
     fetchuser();
   }, []);
-  console.log(user);
 
   return (
     <>
