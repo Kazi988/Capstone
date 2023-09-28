@@ -57,7 +57,7 @@ function NavBar({ cart, setCart, token, setToken }) {
 
       if (error) throw error;
     } catch (err) {
-      console.error("You have an error ", err);
+      console.error("Stripe API Error, cannot communicate", err);
     }
   };
 

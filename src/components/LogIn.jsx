@@ -30,7 +30,7 @@ function LogIn({ setToken, setUser }) {
 
       localStorage.setItem("token", response.token);
     } catch (error) {
-      console.error(error);
+      console.error("Error posting Login info", error);
     }
 
     setUsername("");
