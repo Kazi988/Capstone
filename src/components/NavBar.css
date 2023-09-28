@@ -42,8 +42,43 @@
 
     border: none;
     border-color: black;
-    background-color: black;
+    background-color: rgb(122, 133, 97);
     color: white;
     border-radius: 5px;
     padding: 10px;
+}
+
+
+
+.quantityplusminus {
+  display: flex;
+  gap: 15px;
+  align-items: center; 
+  border: none;
+ 
+}
+
+.plusQ{
+    border:none;
+    background-color: bisque;
+    
+}
+
+.minusQ {
+    border:none;
+    background-color: bisque;
+}
+
+.quantitytext {
+    
+}
+
+#modalitemtitle {
+    font-weight: 700;
+    font-family: 'Roboto';
+}
+
+.modal-price {
+    display: flex;
+    justify-content: center;
 }
