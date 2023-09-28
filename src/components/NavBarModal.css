@@ -71,3 +71,25 @@
   
 
 }
+
+
+
+#removeall {
+
+  background-color: rgb(114, 73, 153);
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: 'Roboto';
+  
+  
+  
+}
+
+#cartisempty {
+  font-family: 'Roboto';
+  font-size: 30px;
+  font-weight: 700;
+}

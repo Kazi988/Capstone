@@ -29,6 +29,10 @@ function NavBar({ cart, setCart, token, setToken }) {
     setCart(cart.filter((item) => item.id !== id));
   }
 
+  function deleteAll(id) {
+    setCart([]);
+  }
+
   const handleCheckout = async () => {
     try {
       const stripe = await stripePromise;
@@ -63,7 +67,7 @@ function NavBar({ cart, setCart, token, setToken }) {
     setQuantity((quantity) => ({ ...quantity, [item.id]: newquantity }));
   }
   function handleminusQuantity(item, minus) {
-    const newquantity = (quantity[item.id] || 0) - 1;
+    const newquantity = (quantity[item.id] || 0) - 1 === 0;
 
     setQuantity((quantity) => ({ ...quantity, [item.id]: newquantity }));
   }
@@ -148,9 +152,30 @@ function NavBar({ cart, setCart, token, setToken }) {
             {cart.map((item) => (
               <li key={item.id} className="modal-item">
                 <img src={item.image} alt={item.title} />
-                <div className="modal-item-details">
+                <div id="modalitemtitle" className="modal-item-details">
                   <span>{item.title}</span>
-                  <span className="modal-price">${item.price}</span>
+                  <div className="modal-price">${item.price}</div>
+                </div>
+
+                <div className="quantityplusminus">
+                  <button
+                    className="plusQ"
+                    onClick={() => {
+                      handleplusQuantity(item, 1);
+                    }}
+                  >
+                    +
+                  </button>
+                  <p className="quantitytext">Quantity:</p>
+                  <p>{quantity[item.id] || 1}</p>
+                  <button
+                    className="minusQ"
+                    onClick={() => {
+                      handleminusQuantity(item, -1);
+                    }}
+                  >
+                    -
+                  </button>
                 </div>
                 <button
                   onClick={() => deleteItem(item.id)}
@@ -158,32 +183,27 @@ function NavBar({ cart, setCart, token, setToken }) {
                 >
                   Remove Item
                 </button>
-                <button
-                  onClick={() => {
-                    handleplusQuantity(item, 1);
-                  }}
-                >
-                  +
-                </button>
-                <p>Quantity</p>
-                <p>{quantity[item.id] || 0}</p>
-                <button
-                  onClick={() => {
-                    handleminusQuantity(item, -1);
-                  }}
-                >
-                  -
-                </button>
               </li>
             ))}
           </ul>
-          {totalPrice !== 0 && (
+          {totalPrice === 0 ? (
+            <p id="cartisempty">Cart is Empty</p>
+          ) : (
             <div>
               <h3 id="totalpricecart">Your Total Is: ${totalPrice}</h3>
             </div>
           )}
         </Modal.Body>
+
         <Modal.Footer>
+          <button
+            id="removeall"
+            onClick={() => {
+              deleteAll();
+            }}
+          >
+            Remove All
+          </button>
           <button id="cartmodalcheckout" onClick={handleCheckout}>
             Checkout
           </button>
