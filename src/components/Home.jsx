@@ -40,7 +40,7 @@ function Home({ token, user, setUser }) {
           className="w-100 d-block"
           itemId={1}
           src="public/test3 (1) (1).jpg"
-          alt="..."
+          alt="page1"
         >
           {" "}
           <div className="carouseltext">
@@ -61,7 +61,7 @@ function Home({ token, user, setUser }) {
           className="w-100 d-block"
           itemId={2}
           src="public/test4.jpg"
-          alt="..."
+          alt="shelves"
         >
           {" "}
           <div className="carouseltext">
@@ -81,7 +81,7 @@ function Home({ token, user, setUser }) {
           className="w-100 d-block"
           itemId={3}
           src="public/test5.jpg"
-          alt="..."
+          alt="saleimage"
         >
           {" "}
           <div className="carouseltext">
