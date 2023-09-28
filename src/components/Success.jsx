@@ -23,7 +23,7 @@ function Success() {
           marginBottom: "300px",
         }}
       >
-        <img src="src/components/images/happykermit.jpg" alt="happykermit" />
+        <img src={"static/images/happykermit.jpg"} alt="happykermit" />
       </div>
     </>
   );

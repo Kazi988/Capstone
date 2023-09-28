@@ -22,7 +22,7 @@ function Cancel() {
           alignItems: "center",
         }}
       >
-        <img src="src/components/images/sadkermit.jpg" alt="sadkermit" />
+        <img src={"/static/images/sadkermit.jpg"} alt="sadkermit" />
       </div>
     </>
   );

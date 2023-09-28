@@ -85,7 +85,7 @@ function About() {
         </Accordion.Item>
       </Accordion>
       <div className="aboutgif">
-        <img src="src/components/images/peach.gif" alt="Peach" />
+        <img src={"/static/images/peach.gif"} alt="Peach" />
       </div>
     </>
   );
