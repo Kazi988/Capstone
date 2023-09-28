@@ -19,7 +19,6 @@ function App() {
   const [user, setUser] = useState("");
   const [cart, setCart] = useState([]);
 
-  console.log(cart);
   return (
     <>
       <div>

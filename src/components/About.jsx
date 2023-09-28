@@ -10,7 +10,9 @@ function About() {
             About Urban Essentials
           </Accordion.Header>
           <Accordion.Body className="abody1">
-            <h1 id="abodytext">Urban Essentials Founded September 2023</h1>
+            <h1 id="abodytext">
+              Urban Essentials Founded September 2023 ~ Kazi ~
+            </h1>
           </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item className="abody2" id="accordion2" eventKey="1">

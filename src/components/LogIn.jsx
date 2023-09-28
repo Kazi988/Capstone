@@ -11,7 +11,6 @@ function LogIn({ setToken, setUser }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log(username);
 
     try {
       const result = await fetch("https://fakestoreapi.com/auth/login", {
@@ -24,13 +23,12 @@ function LogIn({ setToken, setUser }) {
           password: password,
         }),
       });
-      console.log(result);
+
       const response = await result.json();
       setToken(response.token);
       setUser(username);
-      // console.log(token);
+
       localStorage.setItem("token", response.token);
-      console.log(response);
     } catch (error) {
       console.error(error);
     }

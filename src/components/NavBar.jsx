@@ -106,6 +106,7 @@ function NavBar({ cart, setCart, token, setToken }) {
               <li className="nav-item">
                 {isloggedin ? (
                   <Link
+                    className="nav-link"
                     onClick={() => {
                       localStorage.clear();
                       navigatte("/");

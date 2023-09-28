@@ -24,7 +24,7 @@ export default function SingleProduct({ setCart, cart }) {
         const result = await response.json();
         setSingle(result);
       } catch (error) {
-        console.error(error);
+        console.error("Error", error);
       }
     }
     fetchSingleProduct();
